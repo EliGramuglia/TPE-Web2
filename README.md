@@ -14,4 +14,4 @@ El mismo permitirá a los usuarios poder ver información sobre clubes y jugador
 ## Diagrama de entidad de relación: 
 Un club puede tener varios jugadores, pero un jugador sólo pertenece a un club. 
 
-![Alt text](der-1.jpeg)
+![der](./der.jpeg)
