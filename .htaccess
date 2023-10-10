@@ -1,4 +1,5 @@
 <IfModule mod_rewrite.c>
+<<<<<<< HEAD
 	RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
@@ -6,3 +7,13 @@
     RewriteRule \.(?:css|js|jpe?g|gif|png)$ - [L]
     RewriteRule ^(.*)$ router.php?action=$1 [QSA,L]
 </IfModule>
+=======
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+
+
+    RewriteRule \.(?:css|js|jpe?g|gif|png)$ - [L]
+    RewriteRule ^(.*)$ router.php?action=$1 [QSA,L]
+</IfModule>
+>>>>>>> 3470f63e0d380bc1d97454a49e14ec2611c1db56
