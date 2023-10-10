@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
-require_once './app/controllers/jugadores.controller.php';
-=======
 require_once './App/controllers/jugadores.controller.php';
->>>>>>> 3470f63e0d380bc1d97454a49e14ec2611c1db56
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -63,8 +59,4 @@ switch ($params[0]) {
     default: 
         echo "404 Page Not Found";
         break;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3470f63e0d380bc1d97454a49e14ec2611c1db56
