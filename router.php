@@ -1,5 +1,5 @@
 <?php
-require_once './App/controllers/jugadores.controller.php';
+require_once './app/controllers/jugadores.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -8,7 +8,7 @@ if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
 
-// home    ->           taskController->showHome();
+// home    ->           jugadores.controller->showHome();
 
 
 
@@ -20,12 +20,12 @@ if (!empty( $_GET['action'])) {
 // logout ->            authContoller->logout();
 // auth                 authContoller->auth(); // toma los datos del post y autentica al usuario
 
-// parsea la accion para separar accion real de parametros
+
 $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'home':
-        $controller = new jugadoresController();
+        $controller = new JugadoresController();
         $controller->showJugadores();
         break;
     /*case 'agregar':
