@@ -8,13 +8,20 @@ class JugadoresController{
 
     public function __construct(){
         $this->model = new JugadoresModel();
-        $this->view = new JugadoresView();
-        
+        $this->view = new JugadoresView();   
     }
 
     public function showJugadores(){
         $jugadores = $this->model->getJugadores();
         $this->view->mostrarJugadores($jugadores);
+    }
+
+    public function showFormJugadores(){
+        $this->view->mostrarFormJugadores();
+    }
+
+    public function addJugador(){
+        
     }
 }
 

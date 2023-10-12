@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>FORMULARIO EJERCICIO 3</h1>
+    
+    <form action="Ejercicio3Servidor.php" method="POST">
+        <label>Nombre</label>
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+        <label>Edad</label>
+        <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
+        <label>Edad</label>
+        <input type="number" name="edad" placeholder="Ingrese su edad" required>
+        
+        <label>Genero:</label>
+        <!--importante: que el nombre que le asigne al tipo de mi variable sea el mismo-->
+        <label>Masculino</label>
+        <input type="radio" name="genero" value="M">
+        <label>Femenino</label>
+        <input type="radio" name="genero" value="F">
+
+        <label>País</label>
+        <select name="pais" required>
+            <option value="" selected disabled>Selecciona un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Mexico">Mexico</option>
+        </select>
+
+        <button>ENVIAR</button>
+    </form>
+
+</body>
+</html>

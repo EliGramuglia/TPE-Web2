@@ -1,0 +1,46 @@
+.table{
+    margin: 25px;
+    flex: 1;
+}
+
+.contenedorTabla{
+    width: 50%;
+    flex: 1;
+}
+
+.contenedorImg{
+    width: 30%;
+    flex: 1;  
+}
+
+.jugadores {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+}
+
+.img_seleccion{
+    margin-left: 50px;
+    margin-top: 25px;
+    width: 90%;
+    height: auto;
+    justify-content: flex-start;
+}
+
+h1{
+    margin: 20px;
+    padding: 20px;
+    color: #0f428a;
+    font-weight: bolder;
+}
+p{
+    margin-right: 20 px;
+    margin-left: 20px;
+    padding-left: 20px;
+    font-weight: bolder;
+}
+
+body{
+    background-color: #deedfc;  
+}
+

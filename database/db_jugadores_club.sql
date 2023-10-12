@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2023 a las 00:09:42
+-- Tiempo de generación: 12-10-2023 a las 02:59:18
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_jugadores/club`
+-- Base de datos: `db_jugadores_club`
 --
 
 -- --------------------------------------------------------
@@ -31,15 +31,15 @@ CREATE TABLE `club` (
   `id_club` int(11) NOT NULL,
   `Nombre` varchar(45) NOT NULL,
   `Fundación` date NOT NULL,
-  `Titulos Nacionales` int(11) DEFAULT NULL,
-  `Titulos internacionales` int(11) DEFAULT NULL
+  `Titulos_nacionales` int(11) DEFAULT NULL,
+  `Titulos_internacionales` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `club`
 --
 
-INSERT INTO `club` (`id_club`, `Nombre`, `Fundación`, `Titulos Nacionales`, `Titulos internacionales`) VALUES
+INSERT INTO `club` (`id_club`, `Nombre`, `Fundación`, `Titulos_nacionales`, `Titulos_internacionales`) VALUES
 (1, 'Inter de Miami', '2018-01-29', 1, NULL),
 (2, 'Aston Villa', '1874-03-01', 14, 2),
 (3, 'River Plate', '1901-05-25', 52, 12),
@@ -70,16 +70,16 @@ CREATE TABLE `jugadores` (
   `id` int(11) NOT NULL,
   `Nombre` varchar(45) NOT NULL,
   `Edad` int(11) NOT NULL,
-  `Posición` varchar(45) NOT NULL,
-  `Cantidad de goles` int(11) DEFAULT NULL,
-  `Id_Club` int(11) NOT NULL
+  `Posicion` varchar(45) NOT NULL,
+  `Cantidad_de_goles` int(11) DEFAULT NULL,
+  `id_club` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `jugadores`
 --
 
-INSERT INTO `jugadores` (`id`, `Nombre`, `Edad`, `Posición`, `Cantidad de goles`, `Id_Club`) VALUES
+INSERT INTO `jugadores` (`id`, `Nombre`, `Edad`, `Posicion`, `Cantidad_de_goles`, `id_club`) VALUES
 (1, 'Lionel Messi', 36, 'Delantero', 104, 1),
 (2, 'Emiliano Martinez', 31, 'Arquero', NULL, 2),
 (3, 'Franco Armani', 36, 'Arquero', NULL, 3),
@@ -122,7 +122,7 @@ ALTER TABLE `club`
 --
 ALTER TABLE `jugadores`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Id_Club` (`Id_Club`);
+  ADD KEY `Id_Club` (`id_club`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas

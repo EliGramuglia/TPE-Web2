@@ -8,11 +8,11 @@ if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
 
-// home    ->           jugadores.controller->showHome();
+//home      ->        jugadores.controller->showHome();
+//formularioJugadores   ->  jugadores.controller->showFormJugadores();      
+//agregar    ->        jugadores.controller->addJugador();
 
 
-
-// agregar   ->         taskController->addTask();
 // eliminar/:ID  ->     taskController->removeTask($id); 
 // finalizar/:ID  ->    taskController->finishTask($id);
 // about ->             aboutController->showAbout();
@@ -28,11 +28,15 @@ switch ($params[0]) {
         $controller = new JugadoresController();
         $controller->showJugadores();
         break;
-    /*case 'agregar':
-        $controller = new TaskController();
-        $controller->addTask();
+    case 'formularioJugadores':
+        $controller = new JugadoresController();
+        $controller->showFormJugadores();
+        break;        
+    case 'agregar':
+        $controller = new JugadoresController();
+        $controller->addJugador();
         break;
-    case 'eliminar':
+    /*case 'eliminar':
         $controller = new TaskController();
         $controller->removeTask($params[1]);
         break;

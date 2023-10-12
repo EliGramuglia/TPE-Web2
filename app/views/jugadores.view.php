@@ -6,7 +6,10 @@
             require_once 'templates/jugadores.list.phtml';
         }
        
-
+        public function mostrarFormJugadores(){
+            require_once 'templates/form.administrador.phtml';
+            require_once 'templates/jugadores.list.phtml';
+        }
         
     }
 
