@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2023 a las 02:59:18
+-- Tiempo de generación: 12-10-2023 a las 15:53:48
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `club` (
   `id_club` int(11) NOT NULL,
   `Nombre` varchar(45) NOT NULL,
-  `Fundación` date NOT NULL,
+  `Fundacion` date NOT NULL,
   `Titulos_nacionales` int(11) DEFAULT NULL,
   `Titulos_internacionales` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -39,7 +39,7 @@ CREATE TABLE `club` (
 -- Volcado de datos para la tabla `club`
 --
 
-INSERT INTO `club` (`id_club`, `Nombre`, `Fundación`, `Titulos_nacionales`, `Titulos_internacionales`) VALUES
+INSERT INTO `club` (`id_club`, `Nombre`, `Fundacion`, `Titulos_nacionales`, `Titulos_internacionales`) VALUES
 (1, 'Inter de Miami', '2018-01-29', 1, NULL),
 (2, 'Aston Villa', '1874-03-01', 14, 2),
 (3, 'River Plate', '1901-05-25', 52, 12),

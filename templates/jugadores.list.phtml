@@ -17,7 +17,9 @@
             <?php foreach($jugadores as $jugador): ?>
                 <tr>
                     <td>
+                        <a href="home/<?php echo $jugador->id ?>">
                         <?= $jugador->Nombre ?>
+                        </a>
                     </td>
                     <td>
                         <?= $jugador->Edad ?>
@@ -32,6 +34,22 @@
                         <?= $jugador->id_club ?>
                     </td>
                 </tr>
+
+                <?php
+                    // se fija si existe el parametro y en ese caso lo busca e imprime
+                    if (!empty($id)) {
+                        $jugador = mostrarJugador($id);
+                ?>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/avatar.png">
+                        <div class="card-body">
+                            <h4 class="card-title"><?php echo $developer->name ?></h5>
+                            <h5 class="card-subtitle"><?php echo $developer->role ?></h5>
+                            <p><?php echo $developer->email ?></p>
+                        </div>
+                    </div>
+                <?php } ?>
+
             <?php endforeach ?>
             </tbody>
         </table>
@@ -39,7 +57,6 @@
     <div class="contenedorImg">
         <img src="images/argentina.jpeg" alt="Seleccion Argentina" class="img_seleccion">
     </div>
-    <div>
 </div>
 
 

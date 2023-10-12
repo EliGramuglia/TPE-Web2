@@ -1,5 +1,6 @@
 <?php
 require_once './app/controllers/jugadores.controller.php';
+require_once './app/controllers/clubes.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -9,7 +10,8 @@ if (!empty( $_GET['action'])) {
 }
 
 //home      ->        jugadores.controller->showHome();
-//formularioJugadores   ->  jugadores.controller->showFormJugadores();      
+//clubes        ->     clubes.controller->showClubes();  
+//formularioJugadores   ->  jugadores.controller->showFormJugadores();
 //agregar    ->        jugadores.controller->addJugador();
 
 
@@ -28,6 +30,10 @@ switch ($params[0]) {
         $controller = new JugadoresController();
         $controller->showJugadores();
         break;
+    case 'clubes':
+        $controller = new ClubesController();
+        $controller->showClubes();
+        break;    
     case 'formularioJugadores':
         $controller = new JugadoresController();
         $controller->showFormJugadores();

@@ -1,0 +1,32 @@
+<?php require_once './templates/header.phtml'; ?>
+<h1>Clubes</h1>
+<div class="contenedorTablaClubes">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fundación</th>
+                <th>Títulos Nacionales</th>
+                <th>Títulos Internacionales</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($clubes as $club) : ?>
+                <tr>
+                    <td>
+                        <?= $club->Nombre ?>
+                    </td>
+                    <td>
+                        <?= $club->Fundacion ?>
+                    </td>
+                    <td>
+                        <?= $club->Titulos_nacionales ?>
+                    </td>
+                    <td>
+                        <?= $club->Titulos_internacionales ?>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</div>
