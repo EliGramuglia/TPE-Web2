@@ -1,0 +1,26 @@
+<?php require_once './templates/header.phtml'; ?>
+
+<?php
+$nombre = $jugador->Nombre;
+$edad = $jugador->Edad;
+$posicion = $jugador->Posicion;
+$goles = $jugador->Cantidad_de_goles;
+$club = $jugador->Nombre_club;
+
+?>
+
+<div class="contenedorFichaCopa">
+    <div class="fichaJugador">
+        <a href="home" class="btn btn-primary btn-lg">Volver</a> 
+        <h1><?=  $nombre ?></h1>
+        <p>Edad: <?= $edad ?></p>
+        <p>Posición: <?= $posicion ?></p>
+        <p>Cantidad de goles: <?= $goles ?></p>
+        <p>Club al que pertenece en la actualidad: <?= $club ?></p>
+    </div>
+    <div class="copa">
+        <img src="images/copa.jpg" alt="Copa del Mundo" width="70%">
+    </div>
+</div>
+
+

@@ -8,16 +8,17 @@ class JugadoresModel{
     }
 
     public function getJugadores(){
-        $query = $this->db->prepare('SELECT * FROM jugadores');   
+        $query = $this->db->prepare('SELECT jugadores.*, club.Nombre_club FROM jugadores JOIN club ON jugadores.id_club = club.id_club;');   
         $query->execute();
 
         $jugadores = $query->fetchall(PDO::FETCH_OBJ);
         return $jugadores;
     }
 
-    public function getJugador(){
-        $query = $this->db->prepare('SELECT * FROM jugadores');
-        $query->execute();
+    public function getJugador($id){
+        $query = $this->db->prepare('SELECT jugadores.*, club.Nombre_club
+         FROM jugadores JOIN club ON jugadores.id_club = club.id_club WHERE jugadores.id= ?;');
+        $query->execute([$id]);
 
         $jugador = $query->fetch(PDO::FETCH_OBJ);
         return $jugador;

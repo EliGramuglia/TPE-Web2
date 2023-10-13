@@ -1,6 +1,7 @@
 <?php require_once './templates/header.phtml'; ?>
 <h1>Seleccion Argentina</h1>
 <p>Este sitio web muestra la vista detallada del equipo actual de la Selección Argentina. En la siguiente tabla, se puede visualizar toda la información personal de los jugadores: su edad, nacionalidad, posición en la que juegan, cantidad de goles convertidos en la selección y el Club al cual pertenecen.</p>
+<p>Para ver más información seleccione un jugador</p>
 <div class= "jugadores">
     <div class="contenedorTabla">
         <table class="table table-dark table-striped table-hover">
@@ -17,7 +18,7 @@
             <?php foreach($jugadores as $jugador): ?>
                 <tr>
                     <td>
-                        <a href="home/<?php echo $jugador->id ?>">
+                        <a href="jugador/<?php echo $jugador->id ?>">
                         <?= $jugador->Nombre ?>
                         </a>
                     </td>
@@ -31,25 +32,9 @@
                         <?= $jugador->Cantidad_de_goles ?>
                     </td>
                     <td>
-                        <?= $jugador->id_club ?>
+                        <?= $jugador->Nombre_club ?>
                     </td>
                 </tr>
-
-                <?php
-                    // se fija si existe el parametro y en ese caso lo busca e imprime
-                    if (!empty($id)) {
-                        $jugador = mostrarJugador($id);
-                ?>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="images/avatar.png">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $developer->name ?></h5>
-                            <h5 class="card-subtitle"><?php echo $developer->role ?></h5>
-                            <p><?php echo $developer->email ?></p>
-                        </div>
-                    </div>
-                <?php } ?>
-
             <?php endforeach ?>
             </tbody>
         </table>

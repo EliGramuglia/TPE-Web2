@@ -1,0 +1,11 @@
+<?php require_once './templates/header.phtml'; ?>
+
+<a href="home" class="btn btn-primary btn-lg">Volver</a>
+
+<h1>Jugadores que pertenecen al Club:</h1>
+
+<ul>
+    <?php foreach($club as $c): ?>
+        <li><?= $c->Nombre ?></li>
+    <?php endforeach ?>
+</ul>

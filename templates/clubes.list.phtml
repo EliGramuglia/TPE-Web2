@@ -1,5 +1,7 @@
 <?php require_once './templates/header.phtml'; ?>
 <h1>Clubes</h1>
+<p>En la siguiente tabla se pueden visualizar los Clubes a los cuales pertenecen los jugadores de la Selección Argentina, asi como también información acerca de los mismos.</p>
+<p>Ingrese a los links para ver qué jugadores juegan actualmente en cada Club.</p>
 <div class="contenedorTablaClubes">
     <table class="table table-dark table-striped table-hover">
         <thead>
@@ -14,7 +16,8 @@
             <?php foreach ($clubes as $club) : ?>
                 <tr>
                     <td>
-                        <?= $club->Nombre ?>
+                        <a href="club/<?php echo $club->id_club ?>">
+                        <?= $club->Nombre_club ?>
                     </td>
                     <td>
                         <?= $club->Fundacion ?>

@@ -46,8 +46,29 @@ body{
 
 .contenedorTablaClubes{
     width: 80%;
+    margin-left: 80px;
 }
 
 a {
   color: #ffffff;
+}
+
+.fichaJugador{
+    width: 50%;
+    background-color: #c4dcf4;
+    font-size: 25px;
+}
+
+.contenedorFichaCopa{
+    width: 100%;
+    display: flex;
+    margin: 15px;
+    margin-left: 50px;
+}
+.copa{
+    width: 50%;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -14,6 +14,15 @@ class ClubesModel{
         $clubes = $query->fetchall(PDO::FETCH_OBJ);
         return $clubes;
     }
+
+    public function getClub($id){
+        $query = $this->db->prepare('SELECT jugadores.Nombre FROM jugadores JOIN club 
+        ON jugadores.id_club = club.id_club WHERE id=?;');   
+        $query->execute([$id]);
+
+        $club = $query->fetch(PDO::FETCH_OBJ);
+        return $club;
+    }
 }
 
 ?>

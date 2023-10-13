@@ -10,7 +10,9 @@ if (!empty( $_GET['action'])) {
 }
 
 //home      ->        jugadores.controller->showHome();
-//clubes        ->     clubes.controller->showClubes();  
+//clubes        ->     clubes.controller->showClubes();
+//club/id     ->       clubes.controller->showClub($id);  
+//jugador/id    ->     jugadores.controller->showJugador($id);
 //formularioJugadores   ->  jugadores.controller->showFormJugadores();
 //agregar    ->        jugadores.controller->addJugador();
 
@@ -33,7 +35,15 @@ switch ($params[0]) {
     case 'clubes':
         $controller = new ClubesController();
         $controller->showClubes();
-        break;    
+        break;
+    case 'club':
+        $controller = new ClubesController();
+        $controller->showClub($params[1]);
+        break; 
+    case 'jugador':
+        $controller = new JugadoresController();
+        $controller->showJugador($params[1]);
+        break; 
     case 'formularioJugadores':
         $controller = new JugadoresController();
         $controller->showFormJugadores();
