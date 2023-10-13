@@ -20,7 +20,7 @@ class ClubesModel{
         ON jugadores.id_club = club.id_club WHERE id=?;');   
         $query->execute([$id]);
 
-        $club = $query->fetch(PDO::FETCH_OBJ);
+        $club = $query->fetchAll(PDO::FETCH_OBJ);
         return $club;
     }
 }
