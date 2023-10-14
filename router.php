@@ -1,6 +1,7 @@
 <?php
 require_once './app/controllers/jugadores.controller.php';
 require_once './app/controllers/clubes.controller.php';
+require_once './app/controllers/login.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
