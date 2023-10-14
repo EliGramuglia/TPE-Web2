@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2023 a las 00:31:38
+-- Tiempo de generación: 14-10-2023 a las 21:50:10
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_jugadores_club`
+-- Base de datos: `db_jugadores/club`
 --
 
 -- --------------------------------------------------------
@@ -80,7 +80,7 @@ CREATE TABLE `jugadores` (
 --
 
 INSERT INTO `jugadores` (`id`, `Nombre`, `Edad`, `Posicion`, `Cantidad_de_goles`, `id_club`) VALUES
-(1, 'Lionel Messi', 36, 'Delantero', 104, 1),
+(1, 'Lionel Messi', 36, 'Delantero', 819, 1),
 (2, 'Emiliano Martinez', 31, 'Arquero', NULL, 2),
 (3, 'Franco Armani', 36, 'Arquero', NULL, 3),
 (4, 'Geronimo Rulli', 30, 'Arquero', NULL, 4),
@@ -88,7 +88,7 @@ INSERT INTO `jugadores` (`id`, `Nombre`, `Edad`, `Posicion`, `Cantidad_de_goles`
 (6, 'Gonzalo Montiel', 25, 'Defensor', 8, 6),
 (7, 'Marcos Acuña', 31, 'Defensor', 40, 6),
 (8, 'Nicolas Tagliafico', 30, 'Defensor', 20, 7),
-(9, 'Lisandro Martinez', 24, 'Defensor', NULL, 8),
+(9, 'Lisandro Martinez', 24, 'Defensor', 11, 8),
 (10, 'Nicolas Otamendi', 34, 'Defensor', 4, 9),
 (11, 'Cristian Romero', 24, 'Defensor', 2, 10),
 (12, 'German Pezzela', 31, 'Defensor', 17, 11),
@@ -106,6 +106,18 @@ INSERT INTO `jugadores` (`id`, `Nombre`, `Edad`, `Posicion`, `Cantidad_de_goles`
 (24, 'Paulo Dybala', 29, 'Delantero', 176, 17),
 (25, 'Thiago Almada', 21, 'Delantero', 42, 18),
 (26, 'Enzo Fernandez', 21, 'Mediocampista', 21, 19);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `contraseña` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -125,6 +137,12 @@ ALTER TABLE `jugadores`
   ADD KEY `Id_Club` (`id_club`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -139,6 +157,12 @@ ALTER TABLE `club`
 --
 ALTER TABLE `jugadores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
