@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2023 a las 22:37:41
+-- Tiempo de generación: 14-10-2023 a las 22:55:31
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -115,8 +115,8 @@ INSERT INTO `jugadores` (`id`, `Nombre`, `Edad`, `Posicion`, `Cantidad_de_goles`
 
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(45) NOT NULL
+  `email` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
