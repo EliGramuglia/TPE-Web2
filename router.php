@@ -14,6 +14,7 @@ if (!empty( $_GET['action'])) {
 //club/id     ->       clubes.controller->showClub($id);  
 //jugador/id    ->     jugadores.controller->showJugador($id);
 //formularioJugadores   ->  jugadores.controller->showFormJugadores();
+//login          ->      login.Controller->ShowLogin();
 //agregar    ->        jugadores.controller->addJugador();
 
 
@@ -48,6 +49,10 @@ switch ($params[0]) {
         $controller = new JugadoresController();
         $controller->showFormJugadores();
         break;        
+    case 'login':
+        $controller = new LoginController();
+        $controller->showLogin(); 
+        break;
     case 'agregar':
         $controller = new JugadoresController();
         $controller->addJugador();
