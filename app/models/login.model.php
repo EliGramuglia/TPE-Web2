@@ -3,7 +3,7 @@ class LoginModel{
     private $db;
 
     function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=db_jugadores/club;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;dbname=db_jugadores_club;charset=utf8', 'root', '');
     }
 
     public function getByEmail($email){
