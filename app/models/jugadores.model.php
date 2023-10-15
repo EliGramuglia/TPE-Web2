@@ -23,4 +23,24 @@ class JugadoresModel{
         $jugador = $query->fetch(PDO::FETCH_OBJ);
         return $jugador;
     }
+
+    public function insertJugador($nombre, $edad, $posicion, $goles, $id_club){
+        $query = $this->db->prepare('INSERT INTO jugadores (Nombre, Edad, Posicion, Cantidad_de_goles, id_club) VALUES(?,?,?,?,?)');
+        $query->execute([$nombre, $edad, $posicion, $goles, $id_club]);
+
+        return $this->db->lastInsertId();
+    }
+
+    public function deleteJugador($id){
+        $query = $this->db->prepare('DELETE FROM jugadores WHERE id=?');
+        $query->execute([$id]);
+    }
+
+    public function updateJugador($nombre, $edad, $posicion, $goles, $id_club, $id){
+        $query = $this->db->prepare('UPDATE jugadores SET Nombre=?, Edad=?, Posicion=? Cantidad_de_goles=? id_club=?
+         WHERE id=?');
+        $query->execute([$nombre, $edad, $posicion, $goles, $id_club, $id]);
+
+        return $this->db->lastInsertId();
+    }
 }

@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<h1>FORMULARIO EJERCICIO 3</h1>
+<?php 
+    require_once 'templates/header.phtml';
+?>
+<h1>EDITAR TABLA DE JUGADORES</h1>
     
-    <form action="Ejercicio3Servidor.php" method="POST">
+    <form action="agregar" method="POST">
         <label>Nombre</label>
-        <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+        <input type="text" name="nombre" placeholder="Ingrese nombre" required>
         <label>Edad</label>
-        <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
-        <label>Edad</label>
-        <input type="number" name="edad" placeholder="Ingrese su edad" required>
-        
-        <label>Genero:</label>
-        <!--importante: que el nombre que le asigne al tipo de mi variable sea el mismo-->
-        <label>Masculino</label>
-        <input type="radio" name="genero" value="M">
-        <label>Femenino</label>
-        <input type="radio" name="genero" value="F">
+        <input type="number" name="edad" placeholder="Ingrese edad" required>
+        <label>Posición</label>
+        <input type="text" name="posicion" placeholder="Ingrese posición" required>
+        <label>Cantidad de goles</label>
+        <input type="number" name="goles" placeholder="Ingrese cantidad de goles" required>
 
-        <label>País</label>
-        <select name="pais" required>
-            <option value="" selected disabled>Selecciona un país</option>
-            <option value="Argentina">Argentina</option>
-            <option value="Brasil">Brasil</option>
-            <option value="Mexico">Mexico</option>
-        </select>
+        <label>Club al que pertenece</label>
+        <select name="id_club" required>
+            <option selected disabled>Selecciona un Club</option>
+            <?php 
+                foreach ($clubes as $club) { ?>
+                    <option value="<?php echo $club->id_club?>"><?php echo $club->Nombre_club ?></option>
+            <?php } ?>
+        </select>-
 
-        <button>ENVIAR</button>
+        <button>AGREGAR</button>
     </form>
 
-</body>
-</html>

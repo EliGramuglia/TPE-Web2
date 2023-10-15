@@ -5,10 +5,12 @@ require_once './app/views/clubes.view.php';
 class ClubesController{
     private $model;
     private $view;
+    private $model2;
 
     public function __construct(){
         $this->model = new ClubesModel();
-        $this->view = new ClubesView();   
+        $this->view = new ClubesView();  
+        $this->model2 = new JugadoresModel();
     }
 
     public function showClubes(){
@@ -17,7 +19,6 @@ class ClubesController{
     }
 
     public function showClub($id){
-        //me falta chequear si el id existe en la tabla
         if (!empty($id) && is_numeric($id)) {
             $club = $this->model->getClub($id);
         
@@ -29,6 +30,16 @@ class ClubesController{
         } else {
             header('Location: ' . BASE_URL);
         }
+    }
+
+
+     //CRUD TABLA CLUBES
+
+    //READ  (mostrar todos)
+    public function showFormJugadores(){
+        $clubes = $this->model->getClubes();
+        $jugadores = $this->model2->getJugadores();
+        $this->view->mostrarFormClubes($jugadores, $clubes);
     }
     
 }

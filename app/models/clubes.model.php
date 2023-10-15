@@ -17,7 +17,7 @@ class ClubesModel{
 
     public function getClub($id){
         $query = $this->db->prepare('SELECT jugadores.Nombre FROM jugadores JOIN club 
-        ON jugadores.id_club = club.id_club WHERE id=?;');   
+        ON jugadores.id_club = club.id_club WHERE club.id_club=?;');   
         $query->execute([$id]);
 
         $club = $query->fetchAll(PDO::FETCH_OBJ);

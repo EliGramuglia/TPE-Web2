@@ -10,13 +10,19 @@
             require_once 'templates/jugador.phtml';
         }
        
-        public function mostrarFormJugadores(){
-            require_once 'templates/header.phtml';
+        public function mostrarFormJugadores($jugadores, $clubes){
             require_once 'templates/form.administrador.phtml';
+            require_once 'templates/adm.jugadores.list.phtml';
         }
 
-     
-        
+        public function showError(){
+            echo 'error';
+        }
+
+        public function jugadorParaEditar($jugador, $clubes){
+            require_once 'templates/form.editar.administrador.phtml';
+        }
+       
     }
 
 

@@ -1,0 +1,25 @@
+<?php 
+    require_once 'templates/header.phtml';
+?>
+<h1>EDITAR TABLA DE JUGADORES</h1>
+    
+    <form action="editar" method="POST">
+        <label>Nombre</label>
+        <input type="text" name="nombre" value=<?php echo $jugador->Nombre ?> required>
+        <label>Edad</label>
+        <input type="number" name="edad" value=<?php echo $jugador->Edad ?> required>
+        <label>Posición</label>
+        <input type="text" name="posicion" value=<?php echo $jugador->Posicion ?> required>
+        <label>Cantidad de goles</label>
+        <input type="number" name="goles" value=<?php echo $jugador->Cantidad_de_goles ?> required>
+
+        <label>Club al que pertenece</label>
+        <select name="id_club" required>
+            <option selected disabled> <?php echo $jugador->Nombre_club ?></option>
+            <?php 
+                foreach ($clubes as $club) { ?>
+                    <option value="<?php echo $club->id_club?>"><?php echo $club->Nombre_club ?></option>
+            <?php } ?>
+        </select>-
+        <button>EDITAR</button>
+    </form>

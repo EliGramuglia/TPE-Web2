@@ -17,10 +17,9 @@ if (!empty( $_GET['action'])) {
 //formularioJugadores   ->  jugadores.controller->showFormJugadores();
 //login          ->      login.Controller->ShowLogin();
 //agregar    ->        jugadores.controller->addJugador();
+// eliminar/id  ->     jugadores.controller->removeJugador($id); 
+// editar/id  ->    jugadores.controller->updateJugador($id);
 
-
-// eliminar/:ID  ->     taskController->removeTask($id); 
-// finalizar/:ID  ->    taskController->finishTask($id);
 // about ->             aboutController->showAbout();
 // login ->             authContoller->showLogin();
 // logout ->            authContoller->logout();
@@ -58,15 +57,19 @@ switch ($params[0]) {
         $controller = new JugadoresController();
         $controller->addJugador();
         break;
-    /*case 'eliminar':
-        $controller = new TaskController();
-        $controller->removeTask($params[1]);
+    case 'eliminar':
+        $controller = new JugadoresController();
+        $controller->removeJugador($params[1]);
         break;
-    case 'finalizar':
-        $controller = new TaskController();
-        $controller->finishTask($params[1]);
+    case 'editar':
+        $controller = new JugadoresController();
+        $controller->cargarDatosParaEditar($params[1]);
         break;
-    case 'about':
+    /*case 'formularioClubes':
+        $controller = new ClubesController();
+        $controller->showFormClubes();
+        break;  
+    /*case 'about':
         $controller = new AboutController();
         $controller->showAbout();
         break;
