@@ -1,17 +1,16 @@
 <?php require_once 'templates/header.phtml'; ?>
 
-<h1 class= "tituloForm">EDITAR TABLA DE CLUBES</h1>
-    <div class= "formularioClubes">
-        <form action="agregarClub" method="POST">
-            <label>Nombre</label>
-            <input type="text" name="nombre" placeholder="Ingrese nombre" required>
-            <label>Fundacion</label>
-            <input type="date" name="fundacion" placeholder="Ingrese fundacion" required>
-            <label>Titulos Nacionales</label>
-            <input type="text" name="titulosN" placeholder="Ingrese cantidad de títulos Nacionales" required>
-            <label>Titulos Internacionales</label>
-            <input type="text" name="titulosI" placeholder="Ingrese cantidad de títulos Interacionales" required>
+<h1 class="tituloForm">EDITAR TABLA DE CLUBES</h1>
 
-            <button>AGREGAR</button>
-        </form>
-    </div>
+<form class="formAgregarClub"action="agregarClub" method="POST">
+    <label>Nombre</label>
+    <input type="text" name="nombre" placeholder="Ingrese nombre" required>
+    <label>Fundacion</label>
+    <input type="date" name="fundacion" placeholder="Ingrese fundacion" required>
+    <label>Titulos Nacionales</label>
+    <input type="text" name="titulosN" placeholder="Ingrese cantidad de títulos Nacionales" required>
+    <label>Titulos Internacionales</label>
+    <input type="text" name="titulosI" placeholder="Ingrese cantidad de títulos Interacionales" required>
+
+    <button class="botonera">AGREGAR</button>
+</form>

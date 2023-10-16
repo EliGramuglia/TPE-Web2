@@ -1,25 +1,27 @@
 <?php 
     require_once 'templates/header.phtml';
 ?>
-<h1>EDITAR TABLA DE JUGADORES</h1>
-    
-    <form action="editandoJugador/<?php echo $jugador->id ?>" method="POST">
-        <label>Nombre</label>
-        <input type="text" name="nombre" value="<?php echo $jugador->Nombre ?>" required>
-        <label>Edad</label>
-        <input type="number" name="edad" value="<?php echo $jugador->Edad ?>" required>
-        <label>Posición</label>
-        <input type="text" name="posicion" value="<?php echo $jugador->Posicion ?>" required>
-        <label>Cantidad de goles</label>
-        <input type="number" name="goles" value="<?php echo $jugador->Cantidad_de_goles ?>" required>
+<h1 class="tituloFormClubes">EDITAR TABLA DE CLUBES</h1>
+    <div class="contenedorTabla">
+        <form class="formularioClubes" action="editandoJugador/" method="POST">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Ingrese nombre" required>
+            <label>Fundacion</label>
+            <input type="number" name="edad" placeholder="Ingrese fundacion" required>
+            <label>Titulos Nacionales</label>
+            <input type="text" name="posicion" placeholder="Ingrese cantidad de títulos Nacionales" required>
+            <label>Titulos Internacionales</label>
+            <input type="number" name="goles" placeholder="Ingrese cantidad de títulos Interacionales" required>
 
-        <label>Club al que pertenece</label>
-        <select name="id_club" required>
-            <option value="<?php echo $jugador->id_club?>"> <?php echo $jugador->Nombre_club ?> </option>
-            <?php 
-                foreach ($clubes as $club) { ?>
-                    <option value="<?php echo $club->id_club?>"><?php echo $club->Nombre_club ?></option>
-            <?php } ?>
-        </select>-
-        <button>EDITAR</button>
-    </form>
+            <label>Club al que pertenece</label>
+            <select name="id_club" required>
+                <option selected disabled>Selecciona un Club</option>
+                <?php 
+                    foreach ($clubes as $club) { ?>
+                        <option value="<?php echo $club->id_club?>"><?php echo $club->Nombre_club ?></option>
+                <?php } ?>
+            </select>-
+
+            <button class="botonera">AGREGAR</button>
+        </form>
+    </div>

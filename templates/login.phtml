@@ -4,11 +4,11 @@
     $passwordEncriptado = password_hash ($password, PASSWORD_DEFAULT);
 ?>
 
-<div class="formLogin">
-    <form method="POST" action="auth">
+ 
+    <form class="formLogin" method="POST" action="auth">
         <div class="form-login">
             <label for="email">Email</label>
-            <input type="email" required class="form-control" id="email" name="email">
+            <input type="email" id="email" name="email">
         </div>
         <div class="form-login">
             <label for="password">Password</label>
@@ -21,6 +21,5 @@
                 </div>
         <?php endif ?>
     </form>
-</div>
 
 <?php require 'templates/footer.phtml' ?>
