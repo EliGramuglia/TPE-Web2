@@ -1,0 +1,19 @@
+<?php require_once 'templates/header.phtml'; ?>
+
+<h1>EDITAR TABLA DE CLUBES</h1>
+    <div class="contenedorTabla">
+        <form action="editandoClub/<?php echo $club->id_club ?>" method="POST">
+            <label>Nombre</label>
+            <input type="text" name="nombre" value="<?php echo $club->Nombre_club ?>" required>
+            <label>Fundacion</label>
+            <input type="date" name="fundacion" value="<?php echo $club->Fundacion ?>" required>
+            <label>Titulos Nacionales</label>
+            <input type="text" name="titulosN" value="<?php echo $club->Titulos_nacionales ?>" required>
+            <label>Titulos Internacionales</label>
+            <input type="text" name="titulosI" value="<?php echo $club->Titulos_internacionales ?>" required>
+
+            <button>EDITAR</button>
+        </form>
+    </div>
+
+<?php require_once 'templates/footer.phtml'; ?>

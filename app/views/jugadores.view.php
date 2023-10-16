@@ -11,18 +11,19 @@
         }
        
         public function mostrarFormJugadores($jugadores, $clubes){
-            require_once 'templates/form.administrador.phtml';
+            require_once 'templates/form.jugadores.administrador.phtml';
             require_once 'templates/adm.jugadores.list.phtml';
         }
 
-        public function showError(){
-            echo 'error';
+        public function jugadorParaEditar($jugador, $clubes){
+            require_once 'templates/form.editarJugador.adm.phtml';
         }
 
-        public function jugadorParaEditar($jugador, $clubes){
-            require_once 'templates/form.editar.administrador.phtml';
+
+        
+        public function showError(){
+            echo 'error'; //hacer un manejador de errores
         }
-       
     }
 
 

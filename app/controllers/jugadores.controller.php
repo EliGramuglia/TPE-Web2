@@ -1,6 +1,8 @@
 <?php
 require_once './app/models/jugadores.model.php';
 require_once './app/views/jugadores.view.php';
+require_once './app/helper/auth.helper.php';
+
 
 class JugadoresController{
     private $model;
@@ -8,9 +10,10 @@ class JugadoresController{
     private $model2;
 
     public function __construct(){
+        AuthHelper::init();
         $this->model = new JugadoresModel();
-        $this->view = new JugadoresView();  
-        $this->model2 = new ClubesModel(); 
+        $this->view = new JugadoresView(); 
+        $this->model2 = new ClubesModel();  
     }
 
     public function showJugadores(){
@@ -19,7 +22,6 @@ class JugadoresController{
     }
 
     public function showJugador($id){
-        //me falta chequear si el id existe en la tabla
         if (!empty($id) && is_numeric($id)) {
             $jugador = $this->model->getJugador($id);
         
@@ -33,8 +35,7 @@ class JugadoresController{
         }
     }
 
-
- //CRUD TABLA JUGADORES
+    //CRUD TABLA JUGADORES
 
     //READ  (mostrar todos)
     public function showFormJugadores(){
@@ -53,7 +54,7 @@ class JugadoresController{
          $goles = $_POST['goles'];
          $id_club = $_POST['id_club'];
         
-         if (empty($nombre) || empty($edad) || empty($posicion) || empty($goles) || empty($id_club)) {
+         if (empty($nombre) || empty($edad) || empty($posicion) || empty($id_club)) {
              $this->view->showError();
              return;
          }
@@ -90,13 +91,14 @@ class JugadoresController{
             $goles = $_POST['goles'];
             $id_club = $_POST['id_club'];
 
-            if (empty($nombre) || empty($edad) || empty($posicion) || empty($goles) || empty($id_club)) {
+
+            if (empty($nombre) || empty($edad) || empty($posicion) || empty($id_club)) {
                 $this->view->showError();
-                return;
+                die();
             }
 
-            $id = $this->model->updateJugador($nombre, $edad, $posicion, $goles, $id_club, $id);
-            if ($id) {
+            $db_id = $this->model->updateJugador($nombre, $edad, $posicion, $goles, $id_club, $id);
+            if ($db_id) {
                 header('Location: ' . BASE_URL . '/formularioJugadores');
             } else {
                 $this->view->showError();
@@ -107,3 +109,4 @@ class JugadoresController{
     }
 
 }
+?>

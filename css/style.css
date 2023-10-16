@@ -75,8 +75,64 @@ a {
 
 .redes{
     border-radius: 30%;
+    width: 45%;
 }
 
 .contenedorTabla {
     width: 100%;
+}
+
+.boton1, .boton2, .boton3, .boton4{
+    position: absolute;
+    width: 5%;
+}
+
+.boton1{
+    left: 770px;
+}
+.boton2{
+    left: 870px;
+}
+.boton3{
+    left: 970px;
+}
+.boton4{
+    left: 1070px;
+}
+
+.arg1, .arg2{
+    position: absolute;
+}
+
+.arg2{
+    right: 670px;
+    width: 3%;
+}
+.arg1{
+    left: 705px;
+    width: 3%;
+}
+.card-body{
+    margin-bottom: 35px;
+}
+
+.formLogin{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;   
+}
+
+.tituloForm{
+    display: flex;
+    justify-content: center;
+    padding-right: 250px;
+}
+
+.formularioClubes, .formLogin{
+    display: flex;
+    flex-direction: column;
+    padding-left: 350px;
+    padding-right: 500px;
 }

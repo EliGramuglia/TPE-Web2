@@ -1,7 +1,7 @@
 <?php
 require_once './app/controllers/jugadores.controller.php';
 require_once './app/controllers/clubes.controller.php';
-require_once './app/controllers/login.controller.php';
+require_once './app/controllers/auth.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,14 +14,20 @@ if (!empty( $_GET['action'])) {
 //clubes        ->     clubes.controller->showClubes();
 //club/id     ->       clubes.controller->showClub($id);  
 //jugador/id    ->     jugadores.controller->showJugador($id);
-//formularioJugadores   ->  jugadores.controller->showFormJugadores();
 //login          ->      login.Controller->ShowLogin();
-//agregar    ->        jugadores.controller->addJugador();
-// eliminar/id  ->     jugadores.controller->removeJugador($id); 
-// editar/id  ->    jugadores.controller->updateJugador($id);
+//CRUD JUGADORES
+//formularioJugadores   ->  jugadores.controller->showFormJugadores();
+//agregarJugador    ->        jugadores.controller->addJugador();
+// eliminarJugador/id  ->     jugadores.controller->removeJugador($id); 
+// editarJugador/id  ->    jugadores.controller->updateJugador($id);
+//CRUD CLUBES
+//formularioClubes   ->  clubes.controller->showFormxClubes();
+//agregarJugador    ->        jugadores.controller->addJugador();
+// eliminarJugador/id  ->     jugadores.controller->removeJugador($id); 
+// editarJugador/id  ->    jugadores.controller->updateJugador($id);
+
 
 // about ->             aboutController->showAbout();
-// login ->             authContoller->showLogin();
 // logout ->            authContoller->logout();
 // auth                 authContoller->auth(); // toma los datos del post y autentica al usuario
 
@@ -44,39 +50,47 @@ switch ($params[0]) {
     case 'jugador':
         $controller = new JugadoresController();
         $controller->showJugador($params[1]);
-        break; 
+        break;        
     case 'formularioJugadores':
         $controller = new JugadoresController();
         $controller->showFormJugadores();
-        break;        
-    case 'login':
-        $controller = new LoginController();
-        $controller->showLogin(); 
-        break;
-    case 'agregar':
+        break;         
+    case 'agregarJugador':
         $controller = new JugadoresController();
         $controller->addJugador();
         break;
-    case 'eliminar':
+    case 'eliminarJugador':
         $controller = new JugadoresController();
         $controller->removeJugador($params[1]);
         break;
-    case 'editar':
+    case 'editarJugador':
         $controller = new JugadoresController();
         $controller->cargarDatosParaEditar($params[1]);
         break;
-    case 'editando':
+    case 'editandoJugador':
         $controller = new JugadoresController();
-        $controller->cargarDatosParaEditar($params[1]);
+        $controller->updateJugador($params[1]);
         break;
     case 'formularioClubes':
         $controller = new ClubesController();
         $controller->showFormClubes();
+        break; 
+    case 'agregarClub':
+        $controller = new ClubesController();
+        $controller->addClub();
         break;  
-    /*case 'about':
-        $controller = new AboutController();
-        $controller->showAbout();
+    case 'eliminarClub':
+        $controller = new ClubesController();
+        $controller->removeClub($params[1]);
+        break;  
+    case 'editarClub':
+        $controller = new ClubesController();
+        $controller->cargarDatosParaEditar($params[1]);
         break;
+    case 'editandoClub':
+        $controller = new ClubesController();
+        $controller->updateClub($params[1]);
+        break;        
     case 'login':
         $controller = new AuthController();
         $controller->showLogin(); 
@@ -88,7 +102,8 @@ switch ($params[0]) {
     case 'logout':
         $controller = new AuthController();
         $controller->logout();
-        break;*/
+        break;
+
     default: 
         echo "404 Page Not Found";
         break;

@@ -1,7 +1,11 @@
 <?php require 'templates/header.phtml' ?>
 
-<div>
-    <form method="POST" action="Login">
+<?php $password = "admin";
+    $passwordEncriptado = password_hash ($password, PASSWORD_DEFAULT);
+?>
+
+<div class="formLogin">
+    <form method="POST" action="auth">
         <div class="form-login">
             <label for="email">Email</label>
             <input type="email" required class="form-control" id="email" name="email">
@@ -11,6 +15,11 @@
             <input type="password" id="password" name="password">
         </div>
         <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+        <?php if ($error) : ?>
+                <div class='alert alert-danger' role='alert'>
+                    <?= $error ?>
+                </div>
+        <?php endif ?>
     </form>
 </div>
 

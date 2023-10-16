@@ -1,5 +1,5 @@
 <?php 
-class LoginModel{
+class UserModel{
     private $db;
 
     function __construct(){
@@ -7,14 +7,12 @@ class LoginModel{
     }
 
     public function getByEmail($email){
-        $query = $this->db->prepare('SELECT * FROM usarios WHERE email = ?');
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE email = ?');
         $query->execute([$email]);
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
 }
-
-
 
 
 ?>

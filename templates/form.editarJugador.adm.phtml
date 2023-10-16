@@ -3,19 +3,19 @@
 ?>
 <h1>EDITAR TABLA DE JUGADORES</h1>
     
-    <form action="editando" method="POST">
+    <form action="editandoJugador/<?php echo $jugador->id ?>" method="POST">
         <label>Nombre</label>
-        <input type="text" name="nombre" value=<?php echo $jugador->Nombre ?> required>
+        <input type="text" name="nombre" value="<?php echo $jugador->Nombre ?>" required>
         <label>Edad</label>
-        <input type="number" name="edad" value=<?php echo $jugador->Edad ?> required>
+        <input type="number" name="edad" value="<?php echo $jugador->Edad ?>" required>
         <label>Posición</label>
-        <input type="text" name="posicion" value=<?php echo $jugador->Posicion ?> required>
+        <input type="text" name="posicion" value="<?php echo $jugador->Posicion ?>" required>
         <label>Cantidad de goles</label>
-        <input type="number" name="goles" value=<?php echo $jugador->Cantidad_de_goles ?> required>
+        <input type="number" name="goles" value="<?php echo $jugador->Cantidad_de_goles ?>" required>
 
         <label>Club al que pertenece</label>
         <select name="id_club" required>
-            <option selected disabled> <?php echo $jugador->Nombre_club ?></option>
+            <option value="<?php echo $jugador->id_club?>"> <?php echo $jugador->Nombre_club ?> </option>
             <?php 
                 foreach ($clubes as $club) { ?>
                     <option value="<?php echo $club->id_club?>"><?php echo $club->Nombre_club ?></option>

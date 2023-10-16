@@ -37,10 +37,9 @@ class JugadoresModel{
     }
 
     public function updateJugador($nombre, $edad, $posicion, $goles, $id_club, $id){
-        $query = $this->db->prepare('UPDATE jugadores SET Nombre=?, Edad=?, Posicion=? Cantidad_de_goles=? id_club=?
-         WHERE id=?');
-        $query->execute([$nombre, $edad, $posicion, $goles, $id_club, $id]);
+        $query = $this->db->prepare('UPDATE jugadores SET Nombre=?, Edad=?, Posicion=?, Cantidad_de_goles=?, id_club=? WHERE id=?');
+        $response = $query->execute([$nombre, $edad, $posicion, $goles, $id_club, $id]);
 
-        return $this->db->lastInsertId();
+        return $response;
     }
 }

@@ -1,26 +1,16 @@
-<?php 
-    require_once 'templates/header.phtml';
-?>
-<h1>EDITAR TABLA DE CLUBES</h1>
-    <div class="contenedorTabla">
-        <form action="" method="POST">
+<?php require_once 'templates/header.phtml'; ?>
+
+<h1 class= "tituloForm">EDITAR TABLA DE CLUBES</h1>
+    <div class= "formularioClubes">
+        <form action="agregarClub" method="POST">
             <label>Nombre</label>
             <input type="text" name="nombre" placeholder="Ingrese nombre" required>
             <label>Fundacion</label>
-            <input type="number" name="edad" placeholder="Ingrese fundacion" required>
+            <input type="date" name="fundacion" placeholder="Ingrese fundacion" required>
             <label>Titulos Nacionales</label>
-            <input type="text" name="posicion" placeholder="Ingrese cantidad de títulos Nacionales" required>
+            <input type="text" name="titulosN" placeholder="Ingrese cantidad de títulos Nacionales" required>
             <label>Titulos Internacionales</label>
-            <input type="number" name="goles" placeholder="Ingrese cantidad de títulos Interacionales" required>
-
-            <label>Club al que pertenece</label>
-            <select name="id_club" required>
-                <option selected disabled>Selecciona un Club</option>
-                <?php 
-                    foreach ($clubes as $club) { ?>
-                        <option value="<?php echo $club->id_club?>"><?php echo $club->Nombre_club ?></option>
-                <?php } ?>
-            </select>-
+            <input type="text" name="titulosI" placeholder="Ingrese cantidad de títulos Interacionales" required>
 
             <button>AGREGAR</button>
         </form>

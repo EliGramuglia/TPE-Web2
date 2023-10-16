@@ -1,9 +1,9 @@
 <?php 
     require_once 'templates/header.phtml';
 ?>
-<h1>EDITAR TABLA DE JUGADORES</h1>
+<h1 class="tituloForm">EDITAR TABLA DE JUGADORES</h1>
     <div class="contenedorTabla">
-        <form action="agregar" method="POST">
+        <form action="agregarJugador" method="POST">
             <label>Nombre</label>
             <input type="text" name="nombre" placeholder="Ingrese nombre" required>
             <label>Edad</label>
@@ -11,7 +11,7 @@
             <label>Posición</label>
             <input type="text" name="posicion" placeholder="Ingrese posición" required>
             <label>Cantidad de goles</label>
-            <input type="number" name="goles" placeholder="Ingrese cantidad de goles" required>
+            <input type="number" name="goles" placeholder="Ingrese cantidad de goles">
 
             <label>Club al que pertenece</label>
             <select name="id_club" required>
