@@ -1,0 +1,40 @@
+<?php require_once './templates/header.phtml'; ?>
+
+<div class="contenedorTablaClubes">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fundación</th>
+                <th>Títulos Nacionales</th>
+                <th>Títulos Internacionales</th>
+                <th>Botones Administrador</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($clubes as $club) : ?>
+                <tr>
+                    <td>
+                        <a href="club/<?php echo $club->id_club ?>">
+                        <?= $club->Nombre_club ?>
+                    </td>
+                    <td>
+                        <?= $club->Fundacion ?>
+                    </td>
+                    <td>
+                        <?= $club->Titulos_nacionales ?>
+                    </td>
+                    <td>
+                        <?= $club->Titulos_internacionales ?>
+                    </td>
+                    <td>
+                        <a href="editar/" class="btn btn-info">Editar</a> 
+                        <a href="eliminar/ ?>" class="btn btn-info">Eliminar</a> 
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</div>
+
+<?php require_once './templates/footer.phtml'; ?>

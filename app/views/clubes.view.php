@@ -11,8 +11,8 @@
         }
 
         public function mostrarFormClubes($jugadores, $clubes){
-            require_once 'templates/form.administrador.phtml';
-            require_once 'templates/adm.jugadores.list.phtml';
+            require_once 'templates/form.club.administrador.phtml';
+            require_once 'templates/adm.clubes.list.phtml';
         }
        
     }

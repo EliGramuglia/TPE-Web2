@@ -1,6 +1,7 @@
 <?php
 require_once './app/models/clubes.model.php';
 require_once './app/views/clubes.view.php';
+require_once './app/models/jugadores.model.php';
 
 class ClubesController{
     private $model;
@@ -36,7 +37,7 @@ class ClubesController{
      //CRUD TABLA CLUBES
 
     //READ  (mostrar todos)
-    public function showFormJugadores(){
+    public function showFormClubes(){
         $clubes = $this->model->getClubes();
         $jugadores = $this->model2->getJugadores();
         $this->view->mostrarFormClubes($jugadores, $clubes);

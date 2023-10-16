@@ -65,7 +65,11 @@ switch ($params[0]) {
         $controller = new JugadoresController();
         $controller->cargarDatosParaEditar($params[1]);
         break;
-    /*case 'formularioClubes':
+    case 'editando':
+        $controller = new JugadoresController();
+        $controller->cargarDatosParaEditar($params[1]);
+        break;
+    case 'formularioClubes':
         $controller = new ClubesController();
         $controller->showFormClubes();
         break;  

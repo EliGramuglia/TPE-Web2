@@ -1,17 +1,17 @@
 <?php 
     require_once 'templates/header.phtml';
 ?>
-<h1>EDITAR TABLA DE JUGADORES</h1>
+<h1>EDITAR TABLA DE CLUBES</h1>
     <div class="contenedorTabla">
-        <form action="agregar" method="POST">
+        <form action="" method="POST">
             <label>Nombre</label>
             <input type="text" name="nombre" placeholder="Ingrese nombre" required>
-            <label>Edad</label>
-            <input type="number" name="edad" placeholder="Ingrese edad" required>
-            <label>Posición</label>
-            <input type="text" name="posicion" placeholder="Ingrese posición" required>
-            <label>Cantidad de goles</label>
-            <input type="number" name="goles" placeholder="Ingrese cantidad de goles" required>
+            <label>Fundacion</label>
+            <input type="number" name="edad" placeholder="Ingrese fundacion" required>
+            <label>Titulos Nacionales</label>
+            <input type="text" name="posicion" placeholder="Ingrese cantidad de títulos Nacionales" required>
+            <label>Titulos Internacionales</label>
+            <input type="number" name="goles" placeholder="Ingrese cantidad de títulos Interacionales" required>
 
             <label>Club al que pertenece</label>
             <select name="id_club" required>
@@ -25,4 +25,3 @@
             <button>AGREGAR</button>
         </form>
     </div>
-
