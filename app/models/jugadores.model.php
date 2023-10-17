@@ -1,10 +1,11 @@
 <?php
+require_once 'config.php';
 
 class JugadoresModel{
     private $db;
 
     function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=db_jugadores/club;charset=utf8', 'root', '');
+        $this->db = new PDO("mysql:host=" . HOST . ";dbname=" . NAME, USER, PASSWORD);
     }
 
     public function getJugadores(){
