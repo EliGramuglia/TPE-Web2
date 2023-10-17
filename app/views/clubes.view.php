@@ -23,7 +23,7 @@
 
 
         public function showError(){
-            echo 'error'; //hacer un manejador de errores
+            require_once 'templates/error.php';
         }
        
        

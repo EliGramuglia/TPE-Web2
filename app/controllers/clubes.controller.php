@@ -55,7 +55,7 @@ class ClubesController{
         $titulosI = $_POST['titulosI'];
        
         if (empty($nombre) || empty($fundacion)) {
-            $this->view->showError(); //hacer show error
+            $this->view->showError();
             return;
         }
 
@@ -63,7 +63,7 @@ class ClubesController{
         if ($id) {
             header('Location: ' . BASE_URL . '/formularioClubes');
         } else {
-            $this->view->showError(); //hacer show error
+            $this->view->showError();
         }     
    }    
 

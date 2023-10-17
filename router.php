@@ -9,27 +9,24 @@ $action = 'home';
 if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
-
-//home      ->        jugadores.controller->showHome();
-//clubes        ->     clubes.controller->showClubes();
-//club/id     ->       clubes.controller->showClub($id);  
-//jugador/id    ->     jugadores.controller->showJugador($id);
-//login          ->      login.Controller->ShowLogin();
-//CRUD JUGADORES
-//formularioJugadores   ->  jugadores.controller->showFormJugadores();
-//agregarJugador    ->        jugadores.controller->addJugador();
-// eliminarJugador/id  ->     jugadores.controller->removeJugador($id); 
-// editarJugador/id  ->    jugadores.controller->updateJugador($id);
-//CRUD CLUBES
-//formularioClubes   ->  clubes.controller->showFormxClubes();
-//agregarJugador    ->        jugadores.controller->addJugador();
-// eliminarJugador/id  ->     jugadores.controller->removeJugador($id); 
-// editarJugador/id  ->    jugadores.controller->updateJugador($id);
-
-
-// about ->             aboutController->showAbout();
-// logout ->            authContoller->logout();
-// auth                 authContoller->auth(); // toma los datos del post y autentica al usuario
+                 //TABLA DE RUTEO 
+//home                  ->        jugadores.controller->showJugadores();
+//clubes                ->        clubes.controller->showClubes();
+//club/id               ->        clubes.controller->showClub($id);  
+//jugador/id            ->        jugadores.controller->showJugador($id);
+//formularioJugadores   ->        jugadores.controller->showFormJugadores();
+//agregarJugador        ->        jugadores.controller->addJugador();
+//eliminarJugador/id    ->        jugadores.controller->removeJugador($id); 
+//editarJugador/id      ->        jugadores.controller->cargarDatosParaEditar($id);
+//editandoJugador/id    ->        jugadores.controller->updateJugador($id);
+//formularioClubes      ->        clubes.controller->showFormJugadores();
+//agregarClub           ->        clubes.controller->addClub();
+//eliminarClub/id       ->        clubes.controller->removeClub($id); 
+//editarClub/id         ->        clubes.controller->cargarDatosParaEditar($id);
+//editandoClub/id       ->        clubes.controller->updateClub($id);
+//login                 ->        auth.Controller->showLogin();
+//logout                ->        auth.contoller->logout();
+//auth                  ->        auth.contoller->auth(); 
 
 
 $params = explode('/', $action);
@@ -103,7 +100,6 @@ switch ($params[0]) {
         $controller = new AuthController();
         $controller->logout();
         break;
-
     default: 
         echo "404 Page Not Found";
         break;
