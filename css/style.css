@@ -83,33 +83,18 @@ a {
 }
 
 .boton1, .boton2, .boton3, .boton4{
-    position: absolute;
+    position: relative;
     width: 5%;
 }
 
-.boton1{
-    left: 770px;
-}
-.boton2{
-    left: 870px;
-}
-.boton3{
-    left: 970px;
-}
-.boton4{
-    left: 1070px;
-}
-
 .arg1, .arg2{
-    position: absolute;
+    position: relative;
 }
 
 .arg2{
-    right: 670px;
     width: 3%;
 }
 .arg1{
-    left: 705px;
     width: 3%;
 }
 .card-body{
@@ -126,16 +111,16 @@ a {
     padding-right: 400px;
     margin-right: 125px;
 }
-.formLogin, .formJugadores{
+.formJugadores{
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size:larger;
+    font-weight: bold;
 }
-.formJugadores{
-   font-size:larger;
-   font-weight: bold;
-}
+
 .botonera{
     background-color: #226dd6;
 }
+
 

@@ -2,6 +2,9 @@
 require_once './app/controllers/jugadores.controller.php';
 require_once './app/controllers/clubes.controller.php';
 require_once './app/controllers/auth.controller.php';
+require_once './app/controllers/adminJugadores.controller.php';
+require_once './app/controllers/adminClubes.controller.php';
+require_once './app/controllers/error.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -10,23 +13,24 @@ if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
                  //TABLA DE RUTEO 
-//home                  ->        jugadores.controller->showJugadores();
-//clubes                ->        clubes.controller->showClubes();
-//club/id               ->        clubes.controller->showClub($id);  
-//jugador/id            ->        jugadores.controller->showJugador($id);
-//formularioJugadores   ->        jugadores.controller->showFormJugadores();
-//agregarJugador        ->        jugadores.controller->addJugador();
-//eliminarJugador/id    ->        jugadores.controller->removeJugador($id); 
-//editarJugador/id      ->        jugadores.controller->cargarDatosParaEditar($id);
-//editandoJugador/id    ->        jugadores.controller->updateJugador($id);
-//formularioClubes      ->        clubes.controller->showFormJugadores();
-//agregarClub           ->        clubes.controller->addClub();
-//eliminarClub/id       ->        clubes.controller->removeClub($id); 
-//editarClub/id         ->        clubes.controller->cargarDatosParaEditar($id);
-//editandoClub/id       ->        clubes.controller->updateClub($id);
-//login                 ->        auth.Controller->showLogin();
-//logout                ->        auth.contoller->logout();
-//auth                  ->        auth.contoller->auth(); 
+//home                  ->        JugadoresController->showJugadores();
+//clubes                ->        ClubesController->showClubes();
+//club/id               ->        clubesController->showClub($id);  
+//jugador/id            ->        JugadoresController->showJugador($id);
+//formularioJugadores   ->        AdministradorJugadoresController->showFormJugadores();
+//agregarJugador        ->        AdministradorJugadoresController->addJugador();
+//eliminarJugador/id    ->        AdministradorJugadoresController->removeJugador($id); 
+//editarJugador/id      ->        AdministradorJugadoresController->cargarDatosParaEditar($id);
+//editandoJugador/id    ->        AdministradorJugadoresController->updateJugador($id);
+//formularioClubes      ->        AdministradorClubesController->showFormJugadores();
+//agregarClub           ->        AdministradorClubesController->addClub();
+//eliminarClub/id       ->        AdministradorClubesController->removeClub($id); 
+//editarClub/id         ->        AdministradorClubesController->cargarDatosParaEditar($id);
+//editandoClub/id       ->        AdministradorClubesController->updateClub($id);
+//login                 ->        AuthController->showLogin();
+//logout                ->        AuthController->logout();
+//auth                  ->        AuthController->auth(); 
+//asdfghjkl(no existe)  ->        ErrorController->error404();
 
 
 $params = explode('/', $action);
@@ -49,43 +53,43 @@ switch ($params[0]) {
         $controller->showJugador($params[1]);
         break;        
     case 'formularioJugadores':
-        $controller = new JugadoresController();
+        $controller = new AdministradorJugadoresController();
         $controller->showFormJugadores();
         break;         
     case 'agregarJugador':
-        $controller = new JugadoresController();
+        $controller = new AdministradorJugadoresController();
         $controller->addJugador();
         break;
     case 'eliminarJugador':
-        $controller = new JugadoresController();
+        $controller = new AdministradorJugadoresController();
         $controller->removeJugador($params[1]);
         break;
     case 'editarJugador':
-        $controller = new JugadoresController();
+        $controller = new AdministradorJugadoresController();
         $controller->cargarDatosParaEditar($params[1]);
         break;
     case 'editandoJugador':
-        $controller = new JugadoresController();
+        $controller = new AdministradorJugadoresController();
         $controller->updateJugador($params[1]);
         break;
     case 'formularioClubes':
-        $controller = new ClubesController();
+        $controller = new AdministradorClubesController();
         $controller->showFormClubes();
         break; 
     case 'agregarClub':
-        $controller = new ClubesController();
+        $controller = new AdministradorClubesController();
         $controller->addClub();
         break;  
     case 'eliminarClub':
-        $controller = new ClubesController();
+        $controller = new AdministradorClubesController();
         $controller->removeClub($params[1]);
         break;  
     case 'editarClub':
-        $controller = new ClubesController();
+        $controller = new AdministradorClubesController();
         $controller->cargarDatosParaEditar($params[1]);
         break;
     case 'editandoClub':
-        $controller = new ClubesController();
+        $controller = new AdministradorClubesController();
         $controller->updateClub($params[1]);
         break;        
     case 'login':
@@ -101,6 +105,7 @@ switch ($params[0]) {
         $controller->logout();
         break;
     default: 
-        echo "404 Page Not Found";
+        $controller = new ErrorController();
+        $controller->error404();
         break;
 }

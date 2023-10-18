@@ -18,14 +18,7 @@
 
         public function clubParaEditar($club){
             require_once 'templates/form.editarClub.adm.phtml';
-        }
-
-
-
-        public function showError(){
-            require_once 'templates/error.php';
-        }
-       
+        }       
        
     }
 
