@@ -25,6 +25,7 @@ class AuthController {
          $this->view->showLogin('Complete todos los datos');
          return;
       }
+      
       $user = $this->model->getByEmail($email);
 
       if($user && password_verify($password, $user->password)){

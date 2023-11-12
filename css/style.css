@@ -83,22 +83,12 @@ a {
 }
 
 .boton1, .boton2, .boton3, .boton4{
-    position: relative;
+    display: flex;
     width: 5%;
 }
 
-.arg1, .arg2{
-    position: relative;
-}
-
-.arg2{
-    width: 3%;
-}
-.arg1{
-    width: 3%;
-}
-.card-body{
-    margin-bottom: 35px;
+.footer{
+    width: 5px;;
 }
 .tituloForm{
     display: flex;
